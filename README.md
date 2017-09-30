@@ -21,7 +21,7 @@
 
 ### Интерфейс
 
-![](/screen/tagclouds.ru.png?raw=true)
+![](/screenshots/tagclouds.ru.png?raw=true)
 
 ### Обратная связь
 

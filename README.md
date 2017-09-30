@@ -7,25 +7,25 @@
 
 Было принято волевое решение не тратить ресурсы на переезд, а открыть исходный код, чтобы каждый мог запустить проект у себя.
 
-### Установка
+## Установка
 
     git clone https://github.com/OlegPyatakov/tagclouds.git
     
-### Запуск  
+## Запуск  
 
     python ./source/wsgi.py
     
-### Примеры работы
+## Примеры работы
 ![](/source/app/static/example%20random%20color%20masked.png?raw=true)
 ![](/source/app/static/example%20random%20color.png?raw=true)
 ![](/source/app/static/example%20single%20color%20unmasked.png?raw=true)
 ![](/source/app/static/example%20single%20color.png?raw=true)
 
-### Интерфейс
+## Интерфейс
 
 ![](/screenshots/tagclouds.ru.png?raw=true)
 
-### Обратная связь
+## Обратная связь
 
 [Github](https://github.com/OlegPyatakov)
 

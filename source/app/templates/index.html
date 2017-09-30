@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<p><a style="float:left;display:inline-block;" href="./examples">Посмотреть примеры</a><a style="float:right;" href="https://twitter.com/NewsInClouds">Новости в виде тегов в Twitter!</a></p><br>
+<form action="/" method=post enctype=multipart/form-data>
+    <p>
+        <b>Шаг 1: Задайте исходный текст.</b><br>
+        {% if error == "nosource" %}
+        <font color="red"> Произошла ошибка при загрузке файла или попытке обработать URL</font><br>
+        {% endif -%}
+        <b>Укажите URL веб-страницы с исходным текстом для построения облака тегов:</b><br>
+        http://<input type="text" style="font-size:100%;" name="pageurl" placeholder="www.site.ru"><br><br>
+        <b>и/или загрузите свой файл:</b><br>
+        <font color="gray">(формат ".txt", размер не более 1 Мбайт)</font><br>
+        <input type=file name=source accept="text/plain"/><br>
+    </p>
+
+    <p>
+        <b>Шаг 2: Создайте облако тегов.</b><br>
+        <font color="gray">(для обработки большого текста может понадобиться до 2-х минут)</font><br>
+        <input style="height:30px;font-size: 105%;font-family:serif;color:white;background-color:green;" type=submit value="Создать облако тегов">
+        {% if error and not error == 'tagcloud' %}
+        <font color="red">Во время загрузки исходных данных произошла ошибка. </font><br>
+        {% endif -%}
+        {% if error and error == 'tagcloud' %}
+        <font color="red">Во время создания облака тегов произошла ошибка. Пожалуйста попробуйте еще раз.</font><br>
+        {% endif -%}
+    </p>
+    <hr>
+    <div style="font-size:90%">
+        <p>
+            <b>Опционально: Делать ли цвета тегов случайными?</b><br>
+            <input type="checkbox" name=randomizecolors> Если опция отмечена, то цвета всех тегов будут подобраны полностью случайно.
+            По умолчанию цвета тегов формируются на базе цветов маски-шаблона, или, если маска не указана, то цвета выбираются на базе 1 случайного цвета. <br>
+        </p>
+        <p>
+            <b>Опционально: Маска-шаблон</b><br>
+            Загруженное изображение будет использовано в для определения итоговой формы фигуры, в которую будут визуально выстраиваться теги, а их также цвета. <a href="/static/mask example.png" target="_blank">(пример маски)</a> Без указания маски будет создано прямоугольное изображение со случайными цветами.<br>
+            <font color="gray">(формат ".jpg" или ".png", размер не более 1 Мбайт)</font><br>
+            {% if error == "maskfile" %}
+            <font color="red">Ошибка загрузки файла</font><br>
+            {% endif -%}
+            <input type=file name=mask accept=".jpg, .jpeg, .png">
+        </p>
+
+        <p>
+            <b>Опционально: Слова-исключения</b><br>
+            Если необходимо, выберите слова для исключения из облака тегов.
+            По умолчанию уже исключается базовый список общеупотребительных слов: частицы, предлоги, местоимения.<br>
+            <font color="gray">(формат ".txt", размер не более 1 Мбайт)</font><br>
+            {% if error == "stoptxtfile" %}
+            <font color="red">Ошибка загрузки файла </font><br>
+            {% endif -%}
+            <input type=file name=stopwords accept="text/plain"/><br>
+            <input type="checkbox" name=ignorebasestopwords> Если опция отмечена, то базовый список слов-исключений будет игнорироваться.<br>
+        </p>
+        <p>
+            <b>Опционально: Ограничение по максимальному количеству тегов:</b><input type="text" style="font-size:100%" maxlength="4" size="4" name="max_words" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        </p>
+    </div>
+</form>
+{% endblock %}

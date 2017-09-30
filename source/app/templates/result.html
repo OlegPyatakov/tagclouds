@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{{filename}}" target="_blank"><img src={{ filename }}  alt="Облако тегов. Нажмите для получения полной картинки."></a>
+<br>
+<br>
+<form action="/" method=post enctype=multipart/form-data>
+<input type='hidden' name=token value={{token}} />
+<input type='hidden' name=randomizecolors value={{randomizecolors}} />
+<input type=submit value="Перекрасить в другие случайные цвета"><br>
+<i>учитывается выбранная настройка случайных цветов</i>
+</form>
+{% endblock %}

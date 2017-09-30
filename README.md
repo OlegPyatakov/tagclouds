@@ -10,6 +10,7 @@
 ## Установка
 
     git clone https://github.com/OlegPyatakov/tagclouds.git
+    pip install -r requirements.txt
     
 ## Запуск  
 

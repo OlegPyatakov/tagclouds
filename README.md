@@ -17,10 +17,12 @@
     python ./source/wsgi.py
     
 ## Примеры работы
-![](/source/app/static/example%20random%20color%20masked.png?raw=true)
-![](/source/app/static/example%20random%20color.png?raw=true)
+
 ![](/source/app/static/example%20single%20color%20unmasked.png?raw=true)
+![](/source/app/static/example%20random%20color%20masked.png?raw=true)
 ![](/source/app/static/example%20single%20color.png?raw=true)
+![](/source/app/static/example%20random%20color.png?raw=true)
+
 
 ## Интерфейс
 

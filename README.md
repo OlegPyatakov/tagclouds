@@ -32,4 +32,4 @@
 
 [Github](https://github.com/OlegPyatakov)
 
-[Блог и другие контакты](http://pyatakov.com)
+[Блог и другие контакты](https://pyatakov.com)
